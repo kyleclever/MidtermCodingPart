@@ -64,8 +64,16 @@ public class Student_Test {
 		for (int i=0; i<6; i++){			
 			for (int n = 0; i < 10; i++){
 				Enrollment enrollment= new Enrollment();
-				enrollment.setGrade(80);
-			}
+				enrollment.setGrade(80);}
+			
+			
+		
+		public void replaceMajor(int index, String newMajor){
+			Student.set(int [0][4], "ComputerScience");
+		}
+			
+		}
+			
 		}
 
 }
