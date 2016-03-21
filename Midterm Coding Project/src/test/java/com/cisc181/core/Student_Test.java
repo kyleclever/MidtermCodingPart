@@ -2,6 +2,8 @@ package com.cisc181.core;
 
 import static org.junit.Assert.*;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.UUID;
@@ -13,77 +15,95 @@ import com.cisc181.eNums.eMajor;
 
 public class Student_Test {
 
+	static ArrayList<Course> courseSample = new ArrayList<Course>();
+	static ArrayList<Semester> semesterSample = new ArrayList<Semester>();
+	static ArrayList<Section> sectionSample = new ArrayList<Section>();
+	static ArrayList<Student> studentSample = new ArrayList<Student>();
+	static ArrayList<Enrollment> enrollmentSample = new ArrayList<Enrollment>();
+
 	@BeforeClass
-	public static void setup() {
+	public static void setup() throws ParseException {
 
-		ArrayList<Course> courseSample = new ArrayList<Course>();
-		//Course(UUID courseID, String courseName, int gradePoints, String major)
-		courseSample.add(new Course(UUID.randomUUID(),"CISC", 100, eMajor.COMPSI);
-		courseSample.add(new Course(UUID.randomUUID(),"ECON", 100, eMajor.COMPSI);
-		courseSample.add(new Course(UUID.randomUUID(),"MATH", 100, eMajor.COMPSI);
+		// Course(UUID courseID, String courseName, int gradePoints, String
+		// major)
+		courseSample.add(new Course("CISC", 100, eMajor.COMPSI));
+		courseSample.add(new Course("ECON", 100, eMajor.COMPSI));
+		courseSample.add(new Course("MATH", 100, eMajor.COMPSI));
 
+		SimpleDateFormat sdf = new SimpleDateFormat("MM-dd-yyyy");
+		String startDate = "08-23-2015";
+		String endDate = "12-20-2015";
+		Date fallStart = sdf.parse(startDate);
+		Date fallEnd = sdf.parse(endDate);
 
-		ArrayList<Semester> semesterSample = new ArrayList<Semester>();
-		//Semester(UUID semesterID, Date startDate, Date endDate)
-		//Fall
-		semesterSample.add(new Semester(UUID.randomUUID(),Date(2015-08-23), Date.(2015-12-20));
-		//Spring
-		semesterSample.add(new Semester(UUID.randomUUID(),Date(2016-02-08), Date.(2016-05-20));
+		String startDate1 = "02-08-2016";
+		String endDate1 = "05-20-2016";
+		Date springStart = sdf.parse(startDate1);
+		Date springEnd = sdf.parse(endDate1);
 
-		
-		ArrayList<Section> sectionSample = new ArrayList<Section>();
-		for (int i = 0; i < courseSample.size(); i++) {
-			for (int n = 0; n < semesterSample.size(); n++)
-				Section.add(courseSample.get(i) + ' ' + semesterSample.get(n));
-		}
+		// Semester(UUID semesterID, Date startDate, Date endDate)
+		// Fall
+		semesterSample.add(new Semester(fallStart, fallEnd));
+		// Spring
+		semesterSample.add(new Semester(springStart, springEnd));
 
-		ArrayList<Student> studentSample = new ArrayList<Student>();
-		
-		studentSample.add(new Student("Le", "Qi", "Wang", Date(1994-9-1), eMajor.COMPSI, "Newark, DE", "(302)-747-0193",
-				"lewang@udel.edu"));		
-		Sample.add(new Student("Sydney", "Sandra", "Smith", Date(1994-9-1), eMajor.COMPSI, "Newark, DE", "(302)-747-0193",
-				"sydneysmith@udel.edu");
-		
-		Sample.add(new Student("Miao", "Chu", "Hu", Date(1994-9-1), eMajor.COMPSI, "Newark, DE", "(302)-747-0193",
-				"miaohu@udel.edu");
-		Student.add("" + student1);
-		Sample.add(new Student("Gabby", "Rose", "Hill", Date(1994-9-1), eMajor.COMPSI, "Newark, DE", "(302)-747-0193",
-				"gabbyhill@udel.edu");
-		Student.add("" + student1);
-		Sample.add(new Student("Anne", "Ross", "Rook", Date(1994-9-1), eMajor.COMPSI, "Newark, DE", "(302)-747-0193",
-				"annerook@udel.edu");
-	
-		Student student1 = new Student("Kelsey", "Maria", "Diaz", Date(1994-9-1), eMajor.COMPSI, "Newark, DE", "(302)-747-0193",
-				"kelseydiaz@udel.edu");
-		Sample.add(student1);
-		Student student1 = new Student("Edward", "Robert", "Walters", Date(1994-9-1), eMajor.COMPSI, "Newark, DE", "(302)-747-0193",
-				"edwardwalters@udel.edu");
-		Student.add("" + student1);
-		Student student1 = new Student("Sam", "Diego", "Silva", Date(1994-9-1), eMajor.COMPSI, "Newark, DE", "(302)-747-0193",
-				"samsilva@udel.edu");
-		Student.add("" + student1);
-		Student student1 = new Student("Amanda", "Lee", "Hough", Date(1994-9-1), eMajor.COMPSI, "Newark, DE", "(302)-747-0193",
-				"amandahough@udel.edu");
-		Student.add("" + student1);
-		Student student1 = new Student("Jessie", "Douglas", "Leong", Date(1994-9-1), eMajor.COMPSI, "Newark, DE", "(302)-747-0193",
-				"jessieleong@udel.edu");
-		Student.add("" + student1);
-		
-		
+		// Section(UUID courseID, UUID semesterID, int roomID)
+		sectionSample.add(new Section(courseSample.get(0).getCourseID(), semesterSample.get(0).getSemesterID(), 000));
+		sectionSample.add(new Section(courseSample.get(0).getCourseID(), semesterSample.get(1).getSemesterID(), 001));
+		sectionSample.add(new Section(courseSample.get(1).getCourseID(), semesterSample.get(0).getSemesterID(), 002));
+		sectionSample.add(new Section(courseSample.get(1).getCourseID(), semesterSample.get(1).getSemesterID(), 003));
+		sectionSample.add(new Section(courseSample.get(2).getCourseID(), semesterSample.get(0).getSemesterID(), 004));
+		sectionSample.add(new Section(courseSample.get(2).getCourseID(), semesterSample.get(1).getSemesterID(), 005));
 
+		String DOB = "09-30-1994";
+		Date DOB1 = sdf.parse(DOB);
+
+		// Student(String FirstName, String MiddleName, String LastName, Date
+		// DOB, eMajor Major, String Address,
+		// String Phone_number, String Email)
+
+		studentSample.add(new Student("Le", "Qi", "Wang", DOB1, eMajor.COMPSI, "Newark, DE", "(302)-747-0100",
+				"lewang@udel.edu"));
+		studentSample.add(new Student("Sydney", "Sandra", "Smith", DOB1, eMajor.CHEM, "Newark, DE", "(302)-747-0101",
+				"sydneysmith@udel.edu"));
+		studentSample.add(new Student("Miao", "Chu", "Hu", DOB1, eMajor.NURSING, "Newark, DE", "(302)-747-0102",
+				"miaohu@udel.edu"));
+		studentSample.add(new Student("Gabby", "Rose", "Hill", DOB1, eMajor.PHYSICS, "Newark, DE", "(302)-747-0103",
+				"gabbyhill@udel.edu"));
+		studentSample.add(new Student("Anne", "Ross", "Rook", DOB1, eMajor.COMPSI, "Newark, DE", "(302)-747-0104",
+				"annerook@udel.edu"));
+		studentSample.add(new Student("Kelsey", "Maria", "Diaz", DOB1, eMajor.COMPSI, "Newark, DE", "(302)-747-0105",
+				"kelseydiaz@udel.edu"));
+		studentSample.add(new Student("Edward", "Robert", "Walters", DOB1, eMajor.CHEM, "Newark, DE", "(302)-747-0106",
+				"edwardwalters@udel.edu"));
+		studentSample.add(new Student("Sam", "Diego", "Silva", DOB1, eMajor.COMPSI, "Newark, DE", "(302)-747-0107",
+				"samsilva@udel.edu"));
+		studentSample.add(new Student("Amanda", "Lee", "Hough", DOB1, eMajor.COMPSI, "Newark, DE", "(302)-747-0108",
+				"amandahough@udel.edu"));
+		studentSample.add(new Student("Jessie", "Douglas", "Leong", DOB1, eMajor.COMPSI, "Newark, DE", "(302)-747-0109",
+				"jessieleong@udel.edu"));
 
 	}
 
 	@Test
-	public void test() {
-		
-		for (int i=0; i<6; i++){			
-			for (int n = 0; i < 10; i++){
-				Enrollment enrollment= new Enrollment();
-				enrollment.setGrade(80);}
+	public void enrollGrade() {
 
-	public void replaceMajor(int index, String newMajor){
-			Student.set(int [0][4], "ComputerScience");
+		// Enrollment(UUID StudentID, UUID SectionID)
+		for (int i = 0; i < 6; i++) {
+			for (int n = 0; n < 10; n++) {
+				enrollmentSample
+						.add(new Enrollment(studentSample.get(n).getStudentID(), sectionSample.get(i).getSectionID()));
+			}
 		}
+		for (int m = 0; m < 60; m++) {
+			// Enrollment enrollment = new Enrollment();
+			double garde = Math.random() * 100;
+			enrollmentSample.get(m).setGrade(garde);
+		}
+	}
+
+	public void replaceMajor(int index, String newMajor) {
+		Student.set(studentSample[4], "ComputerScience");
+	}
 
 }

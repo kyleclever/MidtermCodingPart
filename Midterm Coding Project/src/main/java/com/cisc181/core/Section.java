@@ -12,10 +12,10 @@ public class Section {
 	public Section() {
 	}
 
-	public Section(UUID courseID, UUID semesterID, UUID sectionID, int roomID) {
+	public Section(UUID courseID, UUID semesterID, int roomID) {
 		this.CourseID = courseID;
 		this.SemesterID = semesterID;
-		this.SectionID = sectionID;
+		this.SectionID = UUID.randomUUID();
 		this.RoomID = roomID;
 	}
 

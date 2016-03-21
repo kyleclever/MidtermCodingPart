@@ -2,17 +2,20 @@ package com.cisc181.core;
 
 import java.util.UUID;
 
+import com.cisc181.eNums.eMajor;
+
 public class Course {
 
 	private UUID CourseID;
 	private String CourseName;
 	private int GradePoints;
-	private String Major;
+	private eMajor Major;
 
 	public Course() {
 	}
-	public Course(UUID courseID, String courseName, int gradePoints, String major) {
-		this.CourseID = courseID;
+
+	public Course(String courseName, int gradePoints, eMajor major) {
+		this.CourseID = UUID.randomUUID();
 		this.CourseName = courseName;
 		this.GradePoints = gradePoints;
 		this.Major = major;
@@ -42,11 +45,11 @@ public class Course {
 		GradePoints = gradePoints;
 	}
 
-	public String getMajor() {
+	public eMajor getMajor() {
 		return Major;
 	}
 
-	public void setMajor(String major) {
+	public void setMajor(eMajor major) {
 		Major = major;
 	}
 
