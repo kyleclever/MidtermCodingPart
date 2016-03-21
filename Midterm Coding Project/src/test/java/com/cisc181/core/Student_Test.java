@@ -4,6 +4,7 @@ import static org.junit.Assert.*;
 
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.UUID;
 
 import org.junit.BeforeClass;
 import org.junit.Test;
@@ -15,23 +16,30 @@ public class Student_Test {
 	@BeforeClass
 	public static void setup() {
 
-		ArrayList<String> Course = new ArrayList<String>();
-		Course.add("CISC181");
-		Course.add("ECON303");
-		Course.add("MATH350");
+		ArrayList<Course> courseSample = new ArrayList<Course>();
+		//Course(UUID courseID, String courseName, int gradePoints, String major)
+		courseSample.add(new Course(UUID.randomUUID(),"CISC", 100, eMajor.COMPSI);
+		courseSample.add(new Course(UUID.randomUUID(),"ECON", 100, eMajor.COMPSI);
+		courseSample.add(new Course(UUID.randomUUID(),"MATH", 100, eMajor.COMPSI);
 
-		ArrayList<String> Semester = new ArrayList<String>();
-		Semester.add("Fall");
-		Semester.add("Spring");
 
-		ArrayList<String> Section = new ArrayList<String>();
-		for (int i = 0; i < Course.size(); i++) {
-			for (int n = 0; n < Semester.size(); n++)
-				Section.add(Course.get(i) + ' ' + Semester.get(n));
+		ArrayList<Semester> semesterSample = new ArrayList<Semester>();
+		//Semester(UUID semesterID, Date startDate, Date endDate)
+		//Fall
+		semesterSample.add(new Semester(UUID.randomUUID(),Date(2015-08-23), Date.(2015-12-20));
+		//Spring
+		semesterSample.add(new Semester(UUID.randomUUID(),Date(2016-02-08), Date.(2016-05-20));
+
+		
+		ArrayList<Section> sectionSample = new ArrayList<Section>();
+		for (int i = 0; i < courseSample.size(); i++) {
+			for (int n = 0; n < semesterSample.size(); n++)
+				Section.add(courseSample.get(i) + ' ' + semesterSample.get(n));
 		}
 
-		ArrayList<Student> Sample = new ArrayList<Student>();
-		Sample.add(new Student("Le", "Qi", "Wang", Date(1994-9-1), eMajor.COMPSI, "Newark, DE", "(302)-747-0193",
+		ArrayList<Student> studentSample = new ArrayList<Student>();
+		
+		studentSample.add(new Student("Le", "Qi", "Wang", Date(1994-9-1), eMajor.COMPSI, "Newark, DE", "(302)-747-0193",
 				"lewang@udel.edu"));		
 		Sample.add(new Student("Sydney", "Sandra", "Smith", Date(1994-9-1), eMajor.COMPSI, "Newark, DE", "(302)-747-0193",
 				"sydneysmith@udel.edu");
@@ -66,11 +74,6 @@ public class Student_Test {
 
 	}
 
-	private static Date Date(int i) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
 	@Test
 	public void test() {
 		
@@ -78,15 +81,9 @@ public class Student_Test {
 			for (int n = 0; i < 10; i++){
 				Enrollment enrollment= new Enrollment();
 				enrollment.setGrade(80);}
-			
-			
-		
-		public void replaceMajor(int index, String newMajor){
+
+	public void replaceMajor(int index, String newMajor){
 			Student.set(int [0][4], "ComputerScience");
-		}
-			
-		}
-			
 		}
 
 }

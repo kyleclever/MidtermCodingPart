@@ -80,13 +80,10 @@ public abstract class Person implements java.io.Serializable {
 	 * Constructors No Arg Constructor
 	 */
 	public Person() {
-
 	}
-
 	/*
 	 * Constructors Constructor with arguments
 	 */
-
 	public Person(String FirstName, String MiddleName, String LastName, Date DOB, String Address, String Phone_number,
 			String Email) {
 		this.FirstName = FirstName;
@@ -136,8 +133,8 @@ public abstract class Person implements java.io.Serializable {
 		return age;
 
 	}
-
 	public void overAge(int age) throws PersonException {
+		age = this.PrintAge();
 		if (age > 100) {
 			System.out.println("Sorry, you must be over 100 yrs old");
 			throw new PersonException(this);
