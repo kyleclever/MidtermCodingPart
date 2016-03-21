@@ -15,7 +15,7 @@ import com.cisc181.eNums.eTitle;
 
 public class Staff_Test {
 
-	ArrayList<Staff> staffSample = new ArrayList<Staff>();
+	static ArrayList<Staff> staffSample = new ArrayList<Staff>();
 
 	@BeforeClass
 	public static void setup() {

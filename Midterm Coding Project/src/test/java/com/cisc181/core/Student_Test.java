@@ -95,6 +95,7 @@ public class Student_Test {
 						.add(new Enrollment(studentSample.get(n).getStudentID(), sectionSample.get(i).getSectionID()));
 			}
 		}
+		// Set Grade
 		for (int m = 0; m < 60; m++) {
 			// Enrollment enrollment = new Enrollment();
 			double garde = Math.random() * 100;
