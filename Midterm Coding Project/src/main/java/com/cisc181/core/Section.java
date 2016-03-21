@@ -8,34 +8,47 @@ public class Section {
 	private UUID SemesterID;
 	private UUID SectionID;
 	private int RoomID;
-	
+
+	public Section() {
+	}
+
+	public Section(UUID courseID, UUID semesterID, UUID sectionID, int roomID) {
+		this.CourseID = courseID;
+		this.SemesterID = semesterID;
+		this.SectionID = sectionID;
+		this.RoomID = roomID;
+	}
+
 	public UUID getCourseID() {
 		return CourseID;
 	}
+
 	public void setCourseID(UUID courseID) {
 		CourseID = courseID;
 	}
+
 	public UUID getSemesterID() {
 		return SemesterID;
 	}
+
 	public void setSemesterID(UUID semesterID) {
 		SemesterID = semesterID;
 	}
+
 	public UUID getSectionID() {
 		return SectionID;
 	}
+
 	public void setSectionID(UUID sectionID) {
 		SectionID = sectionID;
 	}
+
 	public int getRoomID() {
 		return RoomID;
 	}
+
 	public void setRoomID(int roomID) {
 		RoomID = roomID;
 	}
-	public Section(UUID courseID, UUID semesterID) {
-		this.CourseID = courseID;
-		this.SemesterID = semesterID;
-	}
-	
+
 }

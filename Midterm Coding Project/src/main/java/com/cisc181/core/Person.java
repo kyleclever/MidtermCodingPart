@@ -137,10 +137,10 @@ public abstract class Person implements java.io.Serializable {
 
 	}
 
-	public void overage(int age) throws PersonException {
+	public void overAge(int age) throws PersonException {
 		if (age > 100) {
 			System.out.println("Sorry, you must be over 100 yrs old");
-			throw new PersonException("" + age);
+			throw new PersonException(this);
 		}
 	}
 
@@ -153,7 +153,7 @@ public abstract class Person implements java.io.Serializable {
 
 		if (phone_number != matcher.replaceFirst("($1) $2-$3")) {
 			System.out.println("Sorry, the phone format must be (###)-###-####");
-			throw new PersonException("" + phone_number);
+			throw new PersonException(this);
 		}
 	}
 }

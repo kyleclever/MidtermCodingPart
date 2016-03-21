@@ -1,13 +1,13 @@
 package com.cisc181.core;
 
 public class PersonException extends Exception {
-	private String Person;	
+	private Person person;	
 
-	public PersonException(String Person) {
-		this.Person = Person;
+	public PersonException(Person person) {
+		this.person = person;
 	}
-	public String getPerson() {
-		return Person;
+	public Person getPerson() {
+		return person;
 	}
 
 }

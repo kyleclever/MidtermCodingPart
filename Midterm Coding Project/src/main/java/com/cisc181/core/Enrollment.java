@@ -13,12 +13,15 @@ public class Enrollment {
 	}
 	// 2-arg constructor
 	public Enrollment(UUID StudentID, UUID SectionID){
+		this.StudentID = StudentID;
+		this.SectionID = SectionID;
 		this.EnrollmentID = UUID.randomUUID();
-	}
+		}
 	// SetGrade procedure
 	public void SetGrade(double grade){
 		this.Grade=grade;
 	}
+
 	public UUID getSectionID() {
 		return SectionID;
 	}
@@ -43,4 +46,5 @@ public class Enrollment {
 	public void setGrade(double grade) {
 		Grade = grade;
 	}
+
 }

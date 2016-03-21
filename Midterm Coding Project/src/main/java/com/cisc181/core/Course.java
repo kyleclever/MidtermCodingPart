@@ -9,6 +9,15 @@ public class Course {
 	private int GradePoints;
 	private String Major;
 
+	public Course() {
+	}
+	public Course(UUID courseID, String courseName, int gradePoints, String major) {
+		this.CourseID = courseID;
+		this.CourseName = courseName;
+		this.GradePoints = gradePoints;
+		this.Major = major;
+	}
+
 	public UUID getCourseID() {
 		return CourseID;
 	}
@@ -41,7 +50,4 @@ public class Course {
 		Major = major;
 	}
 
-	public Course() {
-		
-	}
 }

@@ -30,32 +30,45 @@ public class Student_Test {
 				Section.add(Course.get(i) + ' ' + Semester.get(n));
 		}
 
-		ArrayList<String> Student = new ArrayList<String>();
-		Student student1 = new Student("Kyle", null, "Wang", null, null, "Newark, DE", "(302)-747-0193",
-				"kylewang@udel.edu");
+		ArrayList<Student> Sample = new ArrayList<Student>();
+		Sample.add(new Student("Le", "Qi", "Wang", Date(1994-9-1), eMajor.COMPSI, "Newark, DE", "(302)-747-0193",
+				"lewang@udel.edu"));		
+		Sample.add(new Student("Sydney", "Sandra", "Smith", Date(1994-9-1), eMajor.COMPSI, "Newark, DE", "(302)-747-0193",
+				"sydneysmith@udel.edu");
+		
+		Sample.add(new Student("Miao", "Chu", "Hu", Date(1994-9-1), eMajor.COMPSI, "Newark, DE", "(302)-747-0193",
+				"miaohu@udel.edu");
 		Student.add("" + student1);
-		Student student2 = new Student("John", null, "Smith", null, null, "Newark, DE", "(302)-747-0194",
-				"johnsmith@udel.edu");
-		Student.add("" + student2);
-		Student student3 = new Student("Jake", null, "Wang", null, null, "Newark, DE", "(302)-747-0195",
-				"jakewang@udel.edu");
-		Student.add("" + student3);
-		Student student4 = new Student("Kyle", null, "Wang", null, null, "Newark, DE", "(302)-747-0193",
-				"kylewang@udel.edu");
-		Student.add("" + student4);
-		Student student5 = new Student(null, null, null, null, null, null, null, null);
-		Student.add("" + student5);
-		Student student6 = new Student(null, null, null, null, null, null, null, null);
-		Student.add("" + student6);
-		Student student7 = new Student(null, null, null, null, null, null, null, null);
-		Student.add("" + student7);
-		Student student8 = new Student(null, null, null, null, null, null, null, null);
-		Student.add("" + student8);
-		Student student9 = new Student(null, null, null, null, null, null, null, null);
-		Student.add("" + student9);
-		Student student10 = new Student(null, null, null, null, null, null, null, null);
-		Student.add("" + student10);
+		Sample.add(new Student("Gabby", "Rose", "Hill", Date(1994-9-1), eMajor.COMPSI, "Newark, DE", "(302)-747-0193",
+				"gabbyhill@udel.edu");
+		Student.add("" + student1);
+		Sample.add(new Student("Anne", "Ross", "Rook", Date(1994-9-1), eMajor.COMPSI, "Newark, DE", "(302)-747-0193",
+				"annerook@udel.edu");
+	
+		Student student1 = new Student("Kelsey", "Maria", "Diaz", Date(1994-9-1), eMajor.COMPSI, "Newark, DE", "(302)-747-0193",
+				"kelseydiaz@udel.edu");
+		Sample.add(student1);
+		Student student1 = new Student("Edward", "Robert", "Walters", Date(1994-9-1), eMajor.COMPSI, "Newark, DE", "(302)-747-0193",
+				"edwardwalters@udel.edu");
+		Student.add("" + student1);
+		Student student1 = new Student("Sam", "Diego", "Silva", Date(1994-9-1), eMajor.COMPSI, "Newark, DE", "(302)-747-0193",
+				"samsilva@udel.edu");
+		Student.add("" + student1);
+		Student student1 = new Student("Amanda", "Lee", "Hough", Date(1994-9-1), eMajor.COMPSI, "Newark, DE", "(302)-747-0193",
+				"amandahough@udel.edu");
+		Student.add("" + student1);
+		Student student1 = new Student("Jessie", "Douglas", "Leong", Date(1994-9-1), eMajor.COMPSI, "Newark, DE", "(302)-747-0193",
+				"jessieleong@udel.edu");
+		Student.add("" + student1);
+		
+		
 
+
+	}
+
+	private static Date Date(int i) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 	@Test
