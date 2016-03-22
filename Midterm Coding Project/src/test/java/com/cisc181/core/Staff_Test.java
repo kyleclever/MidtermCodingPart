@@ -18,12 +18,7 @@ public class Staff_Test {
 	static ArrayList<Staff> staffSample = new ArrayList<Staff>();
 
 	@BeforeClass
-	public static void setup() {
-	}
-
-	@Test
-	public void testSmaple() throws ParseException {
-
+	public static void setup() throws ParseException {
 		SimpleDateFormat sdf = new SimpleDateFormat("MM-dd-yyyy");
 		String DOB = "03-01-1980";
 		Date DOB1 = sdf.parse(DOB);
@@ -50,26 +45,25 @@ public class Staff_Test {
 	}
 
 	@Test
-	public void test1() {
+	public void avgSalary() {
 		double sum = 0;
-		for (int i=0 ; i<5; i++) {
-			sum += staffSample.get(i).getSalary();
-			assertEquals(3000, (sum / 5), 0);
-		}
+		sum = staffSample.get(0).getSalary() + staffSample.get(1).getSalary() + staffSample.get(2).getSalary()
+				+ staffSample.get(3).getSalary() + staffSample.get(0).getSalary();
+		assertEquals(2200, (sum / 5), 0);
 	}
 
 	// Exception Test (Invalid DOB & Phone number)
 	@Test(expected = PersonException.class)
-	public void exceptiontest() throws PersonException, ParseException {
-
-		SimpleDateFormat sdf = new SimpleDateFormat("MM-dd-yyyy");
-		String DOB = "03-01-1900";
-		Date InvaidDOB = sdf.parse(DOB);
-
-		String hireDate = "12-31-2015";
-		Date hireDate1 = sdf.parse(hireDate);
-
-		staffSample.add(new Staff("Jamie", "Joseph", "Leong", InvaidDOB, "104 Main Street", "3027470005",
-				"jamieleong@udel.edu", "M.W.F 10-11AM", 1, 6000.0, hireDate1, eTitle.MR));
+	public void exceptiontest() throws PersonException {
+		
+		Calendar InvaidDOB = Calendar.getInstance();
+		Calendar hireDate1 = Calendar.getInstance();
+		InvaidDOB.set(1890, 1, 1);
+		Date DOB = InvaidDOB.getTime();
+		hireDate1.set(2015,9,1);
+		Date hireDate = hireDate1.getTime();		
+				
+		staffSample.add(new Staff("Jamie", "Joseph", "Leong", DOB, "104 Main Street", "3027470005",
+				"jamieleong@udel.edu", "M.W.F 10-11AM", 1, 6000.0, hireDate, eTitle.MR));
 	}
 }

@@ -6,7 +6,7 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
-import java.util.UUID;
+
 
 import org.junit.BeforeClass;
 import org.junit.Test;
@@ -102,9 +102,13 @@ public class Student_Test {
 			enrollmentSample.get(m).setGrade(garde);
 		}
 	}
-
-	public void replaceMajor(int index, String newMajor) {
-		Student.set(studentSample[4], "ComputerScience");
+	@Test
+	public void replaceMajor() {
+		assertEquals(studentSample.get(0).getMajor(), eMajor.COMPSI);
+		//change the first student major
+		studentSample.get(0).setMajor(eMajor.NURSING);
+		assertEquals(studentSample.get(0).getMajor(), eMajor.NURSING);
+		
 	}
 
 }
