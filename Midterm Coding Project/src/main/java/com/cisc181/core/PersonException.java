@@ -6,7 +6,7 @@ public class PersonException extends Exception {
 	public PersonException(Person Person) {
 		this.Person = Person;
 	}
-	public Person getPerson() {
+	public Person setPerson() {
 		return Person;
 	}
 
